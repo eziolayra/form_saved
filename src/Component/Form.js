@@ -157,7 +157,7 @@ function Form () {
               <tbody>
                 {submittedData.map((data, index) => (
                   <tr key={index}>
-                    <td>{data.firstname}&nbsp;{data.middlename}&nbsp;{data.lastname}</td>
+                    <td>{data.firstname}&nbsp;{data.lastname}</td>
                     <td>{data.phone}</td>
                     <td>{data.email}</td>
                     <td>{data.city}</td>

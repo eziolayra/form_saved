@@ -1,12 +1,11 @@
 import React from 'react';
-import Form from './Component/Form';
-import StudentList from './Component/APIcall';
+import Nav from './Component/Nav';
+
 
 const App = () => {
   return (
     <div>
-      <Form />
-      <StudentList/>
+      <Nav/>
     </div>
   );
 };

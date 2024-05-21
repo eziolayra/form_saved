@@ -4,16 +4,17 @@ function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch('https://192.168.254.24:44397/api/Student/GetStudents')
-      .then(response => {return response.json()})
-      .then(data => {
-        console.log(data);
-        setStudents(data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  fetch('http://192.168.254.34:44397/api/Student/GetStudents')
+    .then(response =>  response.json())
+    .then(data => {
+      console.log("Fetched Data",data);
+      setStudents(data);
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}, []);
+
 
   return (
     <div>
@@ -24,6 +25,10 @@ function StudentList() {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Phone</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Education</th>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +37,10 @@ function StudentList() {
               <td>{student.firstName}</td>
               <td>{student.lastName}</td>
               <td>{student.phone}</td>
+              <td>{student.email}</td>
+              <td>{student.city}</td>
+              <td>{student.address}</td>
+              <td>{student.education}</td>
             </tr>
           ))}
         </tbody>
